@@ -1,0 +1,162 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silence Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="menu-toggle">&#9776;</div>
+        <div class="logo">Silence Store</div>
+    </header>
+
+    <nav class="side-nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li> <!-- Added additional link -->
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1 class="welcome-text">مرحباً بك في المتجر Silence</h1>
+    </section>
+
+    <section class="products">
+        <div class="product-card">
+            <h2 class="product-name">Test Product 1</h2>
+            <p>Best-selling item with awesome features.</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        <div class="product-card">
+            <h2 class="product-name">Test Product 2</h2>
+            <p>Exclusive product with premium quality.</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html><style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: #001f3f; /* Dark blue background */
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #001f3f; /* Dark blue */
+    color: white;
+    position: relative;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.side-nav {
+    width: 200px;
+    height: 100vh;
+    background: #001f3f; /* Dark blue */
+    color: white;
+    position: absolute;
+    top: 0;
+    left: -200px;
+    transition: left 0.3s ease;
+}
+
+.side-nav ul {
+    list-style: none;
+    padding: 20px;
+}
+
+.side-nav ul li {
+    margin-bottom: 20px;
+}
+
+.side-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.side-nav.active {
+    left: 0;
+}
+
+.hero {
+    background: #001f3f; /* Dark blue */
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    font-size: 1.5rem;
+}
+
+.welcome-text {
+    transition: opacity 0.3s ease;
+}
+
+.products {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+}
+
+.product-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    color: #000; /* Set text color to black for product names */
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-name {
+    color: #000; /* Set product name color to black */
+}
+
+.buy-button {
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.buy-button:hover {
+    background: #ff6b6b;
+}</style><script>document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const sideNav = document.querySelector('.side-nav');
+    const welcomeText = document.querySelector('.welcome-text');
+
+    menuToggle.addEventListener('click', () => {
+        sideNav.classList.toggle('active');
+
+        // Toggle welcome text visibility without glitch
+        if (sideNav.classList.contains('active')) {
+            welcomeText.style.visibility = 'hidden'; // Hide text
+        } else {
+            welcomeText.style.visibility = 'visible'; // Show text
+        }
+    });
+});</script>
